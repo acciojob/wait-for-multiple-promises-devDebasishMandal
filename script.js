@@ -22,21 +22,27 @@ let tableBody=document.getElementById("output");
 	tableBody.appendChild(row3);
 	row3.colSpan=2;
 
+let randomTime1 = (Math.floor(Math.random() * 3) + 1)*1000;
+let randomTime2 = (Math.floor(Math.random() * 3) + 1)*1000;
+let randomTime3= (Math.floor(Math.random() * 3) + 1)*1000;
 
 const P1=new promise((res,rej)=>{
+	
 	setTimeout(()=>{
 		res("P1resolved");
-	},3000);
+	},randomTime1);
 });
 const P2= new Promise((res,rej)=>{
+	
 	setTimeout(()=>{
 		res("P2resolved");
-	},2000);
+	},randomTime2*1000);
 });
 const P3= new Promise((res,rej)=>{
+	
 	setTimeout(()=>{
 		res("P3resolved");
-	},1000);
+	},randomTime3*1000);
 });
 Promise.all([P1,P2,P3]).then((data)=>{
 let d1=data[0];
@@ -60,7 +66,7 @@ let row4=document.createElement('tr');
 let td41=document.createElement('td');
 td41.textContent='Total'
 let td42=document.createElement('td');
-td42.textContent='6';
+td42.textContent= randomTime1+randomTime2+randomTime3;
 row4.appendChild(td41);
 row4.appendChild(td42);
 tableBody.appendChild(row4);

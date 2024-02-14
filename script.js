@@ -3,21 +3,21 @@ let tableBody=document.getElementById("output");
 
 	let row1 = document.createElement("tr");
 	let tdata1=document.createElement("td");
-	tdata1.textContent="Loading....";
+	tdata1.textContent="Loading...";
 	row1.appendChild(tdata1);
 	tableBody.appendChild(row1);
 	row1.colSpan=2;
 
 	let row2 = document.createElement("tr");
 	let tdata2=document.createElement("td");
-	tdata2.textContent="Loading....";
+	tdata2.textContent="Loading...";
 	row2.appendChild(tdata2);
 	tableBody.appendChild(row2);
 	row2.colSpan=2;
 
 	let row3 = document.createElement("tr");
 	let tdata3=document.createElement("td");
-	tdata3.textContent="Loading....";
+	tdata3.textContent="Loading...";
 	row3.appendChild(tdata3);
 	tableBody.appendChild(row3);
 	row3.colSpan=2;
@@ -44,7 +44,8 @@ const P3= new Promise((res,rej)=>{
 		res("P3resolved");
 	},randomTime3*1000);
 });
-Promise.all([P1,P2,P3]).then((data)=>{
+function promresolve(params) {
+	Promise.all([P1,P2,P3]).then((data)=>{
 let d1=data[0];
 let d3=data[1];
 let d4=data[2];
@@ -72,3 +73,5 @@ row4.appendChild(td42);
 tableBody.appendChild(row4);
 
 }).catch((err)=>{console.log(err)});
+}
+promresolve();

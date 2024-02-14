@@ -20,7 +20,7 @@ let tableBody=document.getElementById("output");
 	tdata3.textContent="Loading....";
 	row3.appendChild(tdata3);
 	tableBody.appendChild(row3);
-	row.colSpan=2;
+	row3.colSpan=2;
 
 
 const P1=new promise((res,rej)=>{

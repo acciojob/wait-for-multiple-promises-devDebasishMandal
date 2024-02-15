@@ -5,12 +5,7 @@ tableBody.innerHTML = `
 	<tr id="loading">
                 <td colspan=2>Loading...</td>
             </tr>
-			<tr id="loading">
-                <td colspan=2>Loading...</td>
-            </tr>
-			<tr id="loading">
-                <td colspan=2>Loading...</td>
-            </tr>
+			
 			`;
 
 let randomTime1 = (Math.floor(Math.random() * 3) + 1) * 1000;
